@@ -1,0 +1,35 @@
+.hud {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.hud__top-left {
+  position: absolute;
+  top: var(--space-md);
+  left: var(--space-md);
+}
+
+.hud__label {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.hud__bottom-center {
+  position: absolute;
+  bottom: var(--space-md);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.hud__hint {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  background: rgba(0, 0, 0, 0.4);
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-full);
+}

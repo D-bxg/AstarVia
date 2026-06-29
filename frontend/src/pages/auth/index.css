@@ -1,0 +1,101 @@
+/* ============================================
+   AuthPage — 认证页面布局
+   断点：768px
+   ============================================ */
+
+.auth-page {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg-primary);
+  padding: var(--space-lg);
+}
+
+/* === Logo 区域 === */
+.auth-page__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-page__logo-placeholder {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--color-accent);
+  letter-spacing: 0.05em;
+}
+
+/* Logo 图片（后续替换占位符后启用） */
+.auth-page__logo img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* === 卡片区域 === */
+.auth-page__card {
+  display: flex;
+  justify-content: center;
+}
+
+/* ============================================
+   手机布局（< 768px）：居中单列
+   ============================================ */
+@media (max-width: 767px) {
+  .auth-page {
+    flex-direction: column;
+    gap: var(--space-xl);
+    padding: var(--space-lg) var(--space-md);
+  }
+
+  .auth-page__logo-placeholder {
+    font-size: var(--font-size-lg);
+  }
+
+  .auth-page__logo img {
+    max-height: 48px; /* 手机上 Logo 小一点 */
+  }
+
+  .auth-page__card {
+    width: 100%;
+  }
+}
+
+/* ============================================
+   桌面布局（≥ 768px）：双列
+   ============================================ */
+@media (min-width: 768px) {
+  .auth-page {
+    flex-direction: row;
+    gap: var(--space-2xl);
+    padding: var(--space-2xl);
+  }
+
+  .auth-page__logo {
+    flex: 1;
+    max-width: 360px;
+  }
+
+  .auth-page__logo-placeholder {
+    font-size: var(--font-size-2xl);
+  }
+
+  .auth-page__card {
+    flex: 1;
+    max-width: 440px;
+  }
+}
+
+/* ============================================
+   大屏优化（≥ 1200px）
+   ============================================ */
+@media (min-width: 1200px) {
+  .auth-page {
+    gap: 80px;
+  }
+
+  .auth-page__logo {
+    max-width: 420px;
+  }
+}

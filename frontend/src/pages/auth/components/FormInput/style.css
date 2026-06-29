@@ -1,0 +1,49 @@
+.form-input {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-md);
+}
+
+.form-input__label {
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: var(--color-text-secondary);
+}
+
+.form-input__field {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: var(--font-size-md);
+  font-family: var(--font-sans);
+  color: var(--color-text-primary);
+  background: var(--color-bg-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+
+.form-input__field::placeholder {
+  color: var(--color-text-muted);
+}
+
+.form-input__field:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(233, 69, 96, 0.15);
+}
+
+/* 错误状态 */
+.form-input--error .form-input__field {
+  border-color: #e94560;
+}
+
+.form-input--error .form-input__field:focus {
+  box-shadow: 0 0 0 3px rgba(233, 69, 96, 0.25);
+}
+
+.form-input__error {
+  font-size: var(--font-size-xs);
+  color: #e94560;
+  min-height: 0;
+}

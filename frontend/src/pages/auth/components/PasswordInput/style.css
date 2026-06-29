@@ -1,0 +1,74 @@
+.password-input {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-md);
+}
+
+.password-input__label {
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: var(--color-text-secondary);
+}
+
+.password-input__wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-input__field {
+  width: 100%;
+  padding: 10px 40px 10px 12px;
+  font-size: var(--font-size-md);
+  font-family: var(--font-sans);
+  color: var(--color-text-primary);
+  background: var(--color-bg-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+
+.password-input__field::placeholder {
+  color: var(--color-text-muted);
+}
+
+.password-input__field:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(233, 69, 96, 0.15);
+}
+
+.password-input__toggle {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 4px 6px;
+  font-size: 16px;
+  line-height: 1;
+  background: none;
+  border: none;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity var(--transition-fast);
+  user-select: none;
+}
+
+.password-input__toggle:hover {
+  opacity: 0.9;
+}
+
+/* 错误状态 */
+.password-input--error .password-input__field {
+  border-color: #e94560;
+}
+
+.password-input--error .password-input__field:focus {
+  box-shadow: 0 0 0 3px rgba(233, 69, 96, 0.25);
+}
+
+.password-input__error {
+  font-size: var(--font-size-xs);
+  color: #e94560;
+}

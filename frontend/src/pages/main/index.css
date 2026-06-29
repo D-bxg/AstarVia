@@ -1,0 +1,20 @@
+.main-page {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+/* 3D 画布占据主体 */
+.main-page__canvas {
+  flex: 1;
+  position: relative;
+}
+
+/* 控制面板绝对定位覆盖在右侧 */
+.main-page__canvas + aside {
+  position: absolute;
+  top: var(--space-lg);
+  right: var(--space-lg);
+  z-index: 10;
+}
