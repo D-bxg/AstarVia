@@ -1,0 +1,122 @@
+/* 遮罩层 */
+.hamburger-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* 菜单面板 */
+.hamburger-menu {
+  position: absolute;
+  top: 56px;
+  right: var(--space-md);
+  z-index: 100;
+  width: 240px;
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  animation: hamburger-slide-in 200ms ease;
+}
+
+@keyframes hamburger-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === 用户信息（第一行） === */
+.hamburger-menu__user {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-lg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.hamburger-menu__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.hamburger-menu__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hamburger-menu__avatar-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: var(--color-accent);
+  color: #fff;
+  font-weight: 600;
+  font-size: var(--font-size-lg);
+}
+
+.hamburger-menu__name {
+  font-size: var(--font-size-md);
+  font-weight: 500;
+  color: var(--color-text-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* === 中间菜单项 === */
+.hamburger-menu__items {
+  padding: var(--space-sm) 0;
+}
+
+.hamburger-menu__item {
+  display: block;
+  width: 100%;
+  padding: 10px var(--space-lg);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  text-align: left;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.hamburger-menu__item:hover {
+  background: rgba(233, 69, 96, 0.08);
+  color: var(--color-text-primary);
+}
+
+/* === 控制面板插槽 === */
+.hamburger-menu__panel {
+  padding: var(--space-md) var(--space-lg);
+  border-top: 1px solid var(--color-border);
+}
+
+/* === 退出（最后一行） === */
+.hamburger-menu__footer {
+  border-top: 1px solid var(--color-border);
+}
+
+.hamburger-menu__logout {
+  display: block;
+  width: 100%;
+  padding: 10px var(--space-lg);
+  font-size: var(--font-size-sm);
+  color: var(--color-accent);
+  text-align: left;
+  transition: background var(--transition-fast);
+}
+
+.hamburger-menu__logout:hover {
+  background: rgba(233, 69, 96, 0.08);
+}

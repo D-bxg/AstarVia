@@ -1,0 +1,2 @@
+# Electron 打包产物（不进入 asar，不提交 git）
+dist/desktop/

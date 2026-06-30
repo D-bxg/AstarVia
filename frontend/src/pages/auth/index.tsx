@@ -1,7 +1,7 @@
 import React from 'react';
 import { AuthCard } from './components/AuthCard';
 import { useAuth } from './hooks/useAuth';
-import logo from './assets/logo.svg'; // TODO: 替换为真实 logo 文件后取消注释
+import logo from '@shared/assets/logo.svg';
 import './index.css';
 
 /**
@@ -23,7 +23,6 @@ export const AuthPage: React.FC = () => {
     <div className="auth-page">
       {/* Logo 区域 */}
       <div className="auth-page__logo">
-        {/* TODO: 放入 logo 文件后替换为 <img src={logo} alt="AstarVia" /> */}
         <img src={logo} alt="AstarVia" />
       </div>
 

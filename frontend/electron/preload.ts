@@ -1,10 +1,17 @@
-import { contextBridge } from 'electron';
+import { contextBridge, ipcRenderer } from 'electron';
+
+export interface ScreenDPI {
+  dpi: number;
+  scaleFactor: number;
+  bounds: { x: number; y: number; width: number; height: number };
+  physicalMM?: { width: number; height: number };
+  error?: string;
+}
 
 /**
  * 预加载脚本 — 安全地暴露有限 API 给渲染进程
- * 后续可按需扩展 IPC 通信接口
  */
 contextBridge.exposeInMainWorld('electronAPI', {
-  /** 平台信息 */
   platform: process.platform,
+  getScreenDPI: (): Promise<ScreenDPI> => ipcRenderer.invoke('get-screen-dpi'),
 });

@@ -1,0 +1,81 @@
+.question-card {
+  flex-shrink: 0;
+  background: #fff;
+  color: #1a1a2e;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  overflow: hidden;
+  transition:
+    height 400ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 350ms ease,
+    box-shadow 350ms ease;
+  user-select: none;
+}
+
+.question-card:hover:not(.question-card--expanded) {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+}
+
+/* 撑开至 A4 */
+.question-card--expanded {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+}
+
+/* 其他卡片淡出 */
+.question-card--fading {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* 内容区 */
+.question-card__inner {
+  padding: 24px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.question-card__number {
+  font-size: 13px;
+  color: #999;
+  margin-bottom: 8px;
+  flex-shrink: 0;
+}
+
+.question-card__title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 8px;
+  line-height: 1.4;
+  flex-shrink: 0;
+}
+
+.question-card__subtitle {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+  flex-shrink: 0;
+}
+
+/* 展开后的额外内容 */
+.question-card__expanded-content {
+  flex: 1;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+  overflow-y: auto;
+  animation: expanded-fade-in 300ms ease 200ms both;
+}
+
+.question-card__placeholder {
+  color: #ccc;
+  font-size: 14px;
+  text-align: center;
+  padding-top: 40px;
+}
+
+@keyframes expanded-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}

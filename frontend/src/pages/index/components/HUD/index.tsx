@@ -12,14 +12,6 @@ export const HUD: React.FC = () => {
     <div className="hud">
       <div className="hud__top-left">
         {/* 帧率 / 坐标信息，后续接入 stats.js 或自定义 */}
-        <span className="hud__label">AstarVia</span>
-      </div>
-
-      <div className="hud__bottom-center">
-        {/* 底部提示信息 */}
-        <span className="hud__hint">
-          拖拽旋转 · 滚轮缩放 · 右键平移
-        </span>
       </div>
     </div>
   );

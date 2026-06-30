@@ -1,0 +1,33 @@
+.a4-paper {
+  flex-shrink: 0; /* 不被父容器压缩 */
+  background: #fff;
+  color: #1a1a2e;
+  border-radius: 2px;
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.a4-paper--loading {
+  width: 200px;
+  height: 100px;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg-secondary);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.a4-paper__inner {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.a4-paper__hint {
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  padding-top: 80px;
+}

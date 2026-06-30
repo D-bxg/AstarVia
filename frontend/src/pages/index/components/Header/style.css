@@ -1,0 +1,74 @@
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-sm) var(--space-md);
+  pointer-events: none; /* 让点击穿透到 Canvas，子元素各自开启 */
+}
+
+.header > * {
+  pointer-events: auto;
+}
+
+/* === Logo === */
+.header__logo {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+  box-shadow: 0 0 12px rgba(233, 69, 96, 0.4);
+  cursor: pointer;
+  transition: transform var(--transition-fast);
+}
+
+.header__logo:hover {
+  transform: scale(1.1);
+}
+
+/* === 汉堡按钮 === */
+.header__hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  padding: 6px;
+  border-radius: var(--radius-sm);
+  background: rgba(22, 33, 62, 0.7);
+  border: none;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.header__hamburger:hover {
+  background: rgba(22, 33, 62, 0.9);
+}
+
+.header__hamburger span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: var(--color-text-primary);
+  border-radius: 1px;
+  transition: transform var(--transition-normal), opacity var(--transition-normal);
+}
+
+/* 激活态：三条线变成 X */
+.header__hamburger--active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.header__hamburger--active span:nth-child(2) {
+  opacity: 0;
+}
+
+.header__hamburger--active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
